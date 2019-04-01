@@ -1,0 +1,31 @@
+<div class="calendar-toolbar">
+      {{icon-button
+          icon="angle-left"
+          classNames="toolbar-button prev-week"
+          onConfirm=(action "setWeek" -1)
+      }}
+      {{icon-button
+          icon="plus"
+          classNames="toolbar-button add-event"
+          onConfirm=(action "addEvent")
+      }}
+      {{icon-button
+          icon="angle-right"
+          classNames="toolbar-button next-week"
+          onConfirm=(action "setWeek" 1)
+      }}
+</div>
+
+{{calendar/edit-event
+    event=editEvents.currentEvent
+    weekDays=weekDays
+}}
+
+<div class="calendar-week">
+    {{#each this.weekDays as |weekDay|}}
+        {{calendar/day-view
+            date=weekDay.day
+            events=weekDay.events
+        }}
+    {{/each}}
+</div>

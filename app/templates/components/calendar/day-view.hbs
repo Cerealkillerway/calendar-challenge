@@ -1,0 +1,18 @@
+<div class="day-title">
+    <div class="day-of-the-week">
+          {{this.dayOfTheWeek}}
+    </div>
+    <div class="day-date">
+          {{this.displayedDate}}
+    </div>
+</div>
+
+<div class="day-content">
+    {{#each this.events as |event index|}}
+        {{calendar/event-view
+            event=event.event
+            position=index
+            eventIndex=event.eventIndex
+        }}
+    {{/each}}
+</div>

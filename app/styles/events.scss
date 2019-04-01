@@ -1,0 +1,51 @@
+.quake-console {
+    position: fixed;
+    top: 0;
+    padding: 35px 56px;
+    z-index: 200;
+    background-color: rgba(33, 33, 33, 0.97);
+    width: 100%;
+    max-width: 800px;
+    color: #eeeeee;
+    border-bottom: solid 7px #111111;
+    display: none;
+    border-bottom-right-radius: 5px;
+
+    .event-editor-header {
+        .close-button {
+            margin-bottom: 25px;
+            cursor: pointer;
+            padding: 15px 19px;
+            display: inline-block;
+            border-radius: 3px;
+            border: solid 1px #111111;
+            margin-right: 15px;
+
+            &:hover {
+                background-color: #111111;
+            }
+        }
+
+        .event-editor-title {
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    form {
+        .row {
+            margin-bottom: 20px;
+        }
+    }
+
+    .event-editor-toolbar {
+        margin-top: 35px;
+
+        #edit-event-confirm {
+            svg {
+                margin-right: 15px;
+            }
+        }
+    }
+}

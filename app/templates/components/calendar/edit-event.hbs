@@ -1,0 +1,47 @@
+<div class="event-editor-header">
+    {{icon-button
+        icon="times"
+        classNames="close-button"
+        onConfirm=(action "closeEditor")
+    }}
+
+    <div class="event-editor-title">
+          Event editor
+    </div>
+</div>
+
+<form>
+    <div class="row">
+        <div class="col">
+            <label for="event-start-date">Start date</label>
+            <input type="date" class="form-control" id="event-start-date" placeholder="choose the event's title" value={{convert-date-for-input event.startDate}}>
+        </div>
+
+        <div class="col">
+            <label for="event-end-date">End date</label>
+            <input type="date" class="form-control" id="event-end-date" placeholder="choose the event's title" value={{convert-date-for-input event.endDate}}>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="event-title">Title</label>
+        <input type="text" class="form-control" id="event-title" placeholder="choose the event's title" value={{event.title}}>
+    </div>
+
+    <div class="form-group">
+        <label for="event-description">Description</label>
+        <input type="text" class="form-control" id="event-description" placeholder="event's description" value={{event.description}}>
+    </div>
+
+    <div class="form-group">
+        <label for="event-owner">Owner</label>
+        <input type="text" class="form-control" id="event-owner" placeholder="choose the event's owner" value={{event.owner}}>
+    </div>
+</form>
+
+<div class="event-editor-toolbar">
+      <button {{action "confirmEditor"}} id="edit-event-confirm" class="btn btn-primary">
+          {{fa-icon "check"}}
+          Confirm
+      </button>
+</div>

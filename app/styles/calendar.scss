@@ -1,0 +1,110 @@
+.calendar-toolbar {
+    background-color: $blue;
+    color: #eeeeee;
+    flex-basis: 100%;
+    position: relative;
+    height: 46px;
+
+    .toolbar-button {
+        position: absolute;
+        cursor: pointer;
+        height: 46px;
+        width: 46px;
+        text-align: center;
+        padding-top: 11px;
+
+        &.prev-week {
+            left: 0;
+        }
+
+        &.next-week {
+            right: 0;
+        }
+
+        &.add-event {
+            left: calc(50% - 23px);
+        }
+
+        &:hover {
+            background-color: darken($blue, 15%);
+        }
+    }
+}
+
+
+.calendar-week {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: calc(100vh - 102px);
+    overflow-x: hidden;
+}
+
+
+.calendar-day {
+    flex: 0 0 14.28%;
+    border-bottom: solid 1px #bababa;
+
+    &:not(:last-child) {
+        border-right: solid 1px #bababa;
+    }
+
+    .day-title {
+        background-color: #cccccc;
+        padding: 7px 11px;
+        text-align: center;
+
+        .day-of-the-week {
+            font-weight: bold;
+        }
+    }
+
+    .day-content {
+        padding: 15px;
+        min-height: 250px;
+
+        .day-event {
+            border: solid 1px $orange;
+            background-color: lighten($orange, 20%);
+            padding: 7px 15px;
+            width: calc(14.28% - 30px);
+            height: 90px;
+            z-index: 1;
+            position: absolute;
+            top: 77px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                z-index: 99;
+                transform: scaleY(1.1);
+            }
+
+            @for $i from 2 through 7 {
+                &.duration-#{$i} {
+                    width: calc(#{$i * 14.28}% - 30px);
+                }
+            }
+
+            .event-title, .event-description, .event-owner {
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .event-title {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .event-duration {
+                font-size: 0.8rem;
+                font-weight: normal;
+                text-transform: none;
+            }
+        }
+    }
+}

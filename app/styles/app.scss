@@ -1,0 +1,11 @@
+@import "ember-bootstrap/bootstrap";
+@import "./calendar";
+@import "./events";
+
+
+// application styles
+.navbar-dark {
+    .navbar-text {
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
