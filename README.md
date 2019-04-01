@@ -19,6 +19,9 @@ You will need the following things properly installed on your computer.
 * `cd calendar-challenge`
 * `npm install`
 
+It expects to connect to a local mongodb on port 27017 to a database called "calendar-challenge"
+if you have mongodb running somewhere else please edit the connection string at the top of `server/index.js` before running the app.
+
 A mongodb dump is present in the `/dump` directory:
 
 `cd dump`
